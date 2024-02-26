@@ -9,8 +9,8 @@ import { useEffect, useState } from 'react';
 
 export default function Page() {
   const [i, setI] = useState(0);
-  // const router = useRouter();
-  const router = typeof window !== 'undefined' ? useRouter() : null;
+  const router = useRouter();
+  // const router = typeof window !== 'undefined' ? useRouter() : null;
   function move() {
     if (i === 0) {
       setI(1);
