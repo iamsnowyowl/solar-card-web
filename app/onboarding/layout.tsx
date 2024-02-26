@@ -1,9 +1,7 @@
-import '@/app/ui/global.css';
-import {inter} from '@/app/ui/fonts';
 import type { Metadata } from 'next'
  
 export const metadata: Metadata = {
-  title: 'Solar Card',
+  title: 'Onboarding',
   description: '...',
 }
 
@@ -13,8 +11,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
-    </html>
+    <>
+      {children}
+    </>
   );
 }

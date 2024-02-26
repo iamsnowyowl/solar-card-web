@@ -44,25 +44,27 @@ export default function Page() {
   }, []);
 
   return (
-    <main className="flex h-screen flex-col items-center">
-      <Image
-        src="/full-solar-logo-1.png"
-        alt="Hero Image"
-        width={218.5}
-        height={52.5}
-        className="mb-2 mt-[40vh]"
-      />
-      <p className="text-center text-base text-gray-400">
-        Your personal Crypto Cards
-      </p>
-      <div className="relative mt-3 h-2 w-60 rounded-lg bg-gray-100">
-        <div
-          id="myBar"
-          className="absolute left-0 top-0 h-full rounded-lg bg-orange-500"
-          style={{ width: '0%' }}
-        ></div>
-      </div>
-    </main>
+    <>
+      <main className="flex h-screen flex-col items-center">
+        <Image
+          src="/full-solar-logo-1.png"
+          alt="Hero Image"
+          width={218.5}
+          height={52.5}
+          className="mb-2 mt-[40vh]"
+        />
+        <p className="text-center text-base text-gray-400">
+          Your personal Crypto Cards
+        </p>
+        <div className="relative mt-3 h-2 w-60 rounded-lg bg-gray-100">
+          <div
+            id="myBar"
+            className="absolute left-0 top-0 h-full rounded-lg bg-orange-500"
+            style={{ width: '0%' }}
+          ></div>
+        </div>
+      </main>
+    </>
   );
 }
 
