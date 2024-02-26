@@ -151,3 +151,5 @@ export default function page() {
     </main>
   );
 }
+
+// To reduce LCP, Image must be optimized.
