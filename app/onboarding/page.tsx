@@ -4,13 +4,18 @@ import Image from 'next/image';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+// import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 // eslint-disable-next-line react/display-name,
 export default function page() {
   return (
-    <main className="gap-17 relative flex flex-col items-center">
-      <div className="right-15 px-200 absolute top-0 z-[-3] origin-top-left rotate-[25.72deg] rounded-full bg-gray-50 py-96 " />
+    <main className="gap-17 relative flex h-screen flex-col items-center">
+      <div
+        className="absolute top-[-50px]  z-[-1] h-[720px] w-[2000px] origin-right rotate-[25.72deg] rounded-full bg-gray-50"
+        style={{ right: '39%' }}
+      ></div>
       <div className="mt-[11vh] flex justify-center" style={{ width: '327px' }}>
         <Swiper
           spaceBetween={0}
@@ -22,10 +27,24 @@ export default function page() {
           pagination={{
             clickable: true,
           }}
-          navigation={true}
+          // navigation={{
+          //   prevEl: '.swiper-button-prev',
+          //   nextEl: '.swiper-button-next',
+          // }}
           modules={[Autoplay, Pagination, Navigation]}
           slidesPerView={1}
         >
+          {/* swiper icons */}
+          {/* <div className="swiper-button-prev hidden">
+            <div className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-orange-50 p-2">
+              <div className="relative flex h-4 w-4 flex-col items-start justify-start" />
+            </div>
+          </div>
+          <div className="swiper-button-next hidden">
+            <div className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-orange-50 p-2">
+              <div className="relative flex h-4 w-4 origin-top-left rotate-180 flex-col items-start justify-start" />
+            </div>
+          </div> */}
           <SwiperSlide>
             <div className="flex flex-col  justify-center gap-2">
               <Image

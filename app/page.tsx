@@ -9,8 +9,8 @@ import { useEffect, useState } from 'react';
 
 export default function Page() {
   const [i, setI] = useState(0);
-  // const router = useRouter();
-  const router = typeof window !== 'undefined' ? useRouter() : null;
+  const router = useRouter();
+  // const router = typeof window !== 'undefined' ? useRouter() : null;
   function move() {
     if (i === 0) {
       setI(1);
@@ -44,24 +44,28 @@ export default function Page() {
   }, []);
 
   return (
-    <main className="flex h-screen flex-col items-center">
-      <Image
-        src="/full-solar-logo-1.png"
-        alt="Hero Image"
-        width={218.5}
-        height={52.5}
-        className="mb-2 mt-[40vh]"
-      />
-      <p className="text-center text-base text-gray-400">
-        Your personal Crypto Cards
-      </p>
-      <div className="relative mt-3 h-2 w-60 rounded-lg bg-gray-100">
-        <div
-          id="myBar"
-          className="absolute left-0 top-0 h-full rounded-lg bg-orange-500"
-          style={{ width: '0%' }}
-        ></div>
-      </div>
-    </main>
+    <>
+      <main className="flex h-screen flex-col items-center">
+        <Image
+          src="/full-solar-logo-1.png"
+          alt="Hero Image"
+          width={218.5}
+          height={52.5}
+          className="mb-2 mt-[40vh]"
+        />
+        <p className="text-center text-base text-gray-400">
+          Your personal Crypto Cards
+        </p>
+        <div className="relative mt-3 h-2 w-60 rounded-lg bg-gray-100">
+          <div
+            id="myBar"
+            className="absolute left-0 top-0 h-full rounded-lg bg-orange-500"
+            style={{ width: '0%' }}
+          ></div>
+        </div>
+      </main>
+    </>
   );
 }
+
+// please pay attention to...
