@@ -3,21 +3,39 @@
 import Image from 'next/image';
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper as SwiperType } from 'swiper/types';
 import 'swiper/css';
 // import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
+import { useRef } from 'react';
 
 // eslint-disable-next-line react/display-name,
 export default function page() {
+  const swiperRef = useRef<SwiperType | null>(null);
+  const goToNextSlide = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slideNext();
+    }
+  };
+
+  const goToPrevSlide = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slidePrev();
+    }
+  };
   return (
-    <main className="gap-17 relative flex h-screen flex-col items-center">
+    <main className="gap-17 relative flex h-screen flex-col items-center gap-8">
       <div
-        className="absolute top-[-50px]  z-[-1] h-[720px] w-[2000px] origin-right rotate-[25.72deg] rounded-full bg-gray-50"
+        className="absolute top-0  z-[-1] h-[720px] w-[2000px] origin-right rotate-[25.72deg] rounded-full bg-gray-50"
         style={{ right: '39%' }}
       ></div>
-      <div className="mt-[11vh] flex justify-center" style={{ width: '327px' }}>
+      <div
+        className="relative mt-[11vh] flex justify-center"
+        style={{ width: '327px', position: 'relative' }}
+      >
         <Swiper
+          ref={swiperRef}
           spaceBetween={0}
           centeredSlides={true}
           autoplay={{
@@ -27,26 +45,26 @@ export default function page() {
           pagination={{
             clickable: true,
           }}
-          // navigation={{
-          //   prevEl: '.swiper-button-prev',
-          //   nextEl: '.swiper-button-next',
-          // }}
+          navigation={{
+            prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next',
+          }}
           modules={[Autoplay, Pagination, Navigation]}
           slidesPerView={1}
         >
           {/* swiper icons */}
-          {/* <div className="swiper-button-prev hidden">
+          {/* <div className="swiper-button-prev hidden" >
             <div className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-orange-50 p-2">
               <div className="relative flex h-4 w-4 flex-col items-start justify-start" />
             </div>
           </div>
-          <div className="swiper-button-next hidden">
+          <div className="swiper-button-next hidden" >
             <div className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-orange-50 p-2">
               <div className="relative flex h-4 w-4 origin-top-left rotate-180 flex-col items-start justify-start" />
             </div>
           </div> */}
           <SwiperSlide>
-            <div className="flex flex-col  justify-center gap-2">
+            <div className="flex flex-col  justify-center gap-10">
               <Image
                 src="/images/Onboarding illustration-1.png"
                 alt="Welcome_to_Solar"
@@ -65,7 +83,7 @@ export default function page() {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="flex flex-col  justify-center gap-2">
+            <div className="flex flex-col  justify-center gap-10">
               <Image
                 src="/images/Onboarding illustration-2.png"
                 alt="Crypto_Cards"
@@ -84,7 +102,7 @@ export default function page() {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="flex flex-col  justify-center gap-2">
+            <div className="flex flex-col  justify-center gap-10">
               <Image
                 src="/images/Onboarding illustration-3.png"
                 alt="Crypto_Wallet"
@@ -103,13 +121,14 @@ export default function page() {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="flex flex-col  justify-center gap-2">
+            <div className="flex flex-col justify-center gap-10">
               <Image
                 src="/images/Onboarding illustration-4.png"
                 alt="Secure_Support"
                 width={335}
                 height={268}
               />
+
               <div className="items-starter">
                 <p className="text-3xl font-bold capitalize text-black">
                   Full Secure & Support
@@ -122,7 +141,18 @@ export default function page() {
             </div>
           </SwiperSlide>
         </Swiper>
+        <div className="flex gap-[327px] absolute top-[200px]">
+          <button
+            onClick={goToPrevSlide}
+            className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-orange-50 p-2 active:bg-neutral-100"
+          ></button>
+          <button
+            onClick={goToNextSlide}
+            className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-orange-50 p-2 active:bg-neutral-100"
+          ></button>
+        </div>
       </div>
+
       <div className="2-80 inline-flex flex-col items-start justify-start gap-10">
         <div className="inline-flex w-80 flex-col items-start justify-start gap-2">
           {/* <div className="inline-flex items-end justify-start gap-0.5">
