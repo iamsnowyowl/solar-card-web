@@ -35,7 +35,7 @@ export default function page() {
         style={{ width: '327px', position: 'relative' }}
       >
         <Swiper
-          ref={swiperRef}
+          // ref={swiperRef}
           spaceBetween={0}
           centeredSlides={true}
           autoplay={{
