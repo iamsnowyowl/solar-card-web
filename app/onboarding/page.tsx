@@ -183,3 +183,4 @@ export default function page() {
 }
 
 // To reduce LCP, Image must be optimized.
+// This is for beta
