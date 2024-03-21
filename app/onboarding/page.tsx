@@ -1,13 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import React, { useCallback } from 'react';
+import React, { useCallback, useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 // import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
-import { useRef } from 'react';
 import left from '../../public/icons/arrow-right.svg';
 import right from '../../public/icons/arrow-left.svg';
 import onboarding1 from '../../public/images/Onboarding illustration-1.png';
@@ -15,7 +14,7 @@ import onboarding2 from '../../public/images/Onboarding illustration-2.png';
 import onboarding3 from '../../public/images/Onboarding illustration-3.png';
 import onboarding4 from '../../public/images/Onboarding illustration-4.png';
 
-export default function page() {
+const Page = () => {
   const swiperRef = useRef<any | null>(null);
   const handleNextSlide = useCallback(() => {
     if (!swiperRef.current) return;
@@ -174,7 +173,8 @@ export default function page() {
       </div>
     </main>
   );
-}
+};
 
+export default Page;
 // To reduce LCP, Image must be optimized.
 // This is for beta
