@@ -14,7 +14,7 @@ import onboarding2 from '../../public/images/Onboarding illustration-2.png';
 import onboarding3 from '../../public/images/Onboarding illustration-3.png';
 import onboarding4 from '../../public/images/Onboarding illustration-4.png';
 
-const Page = () => {
+export default function Page() {
   const swiperRef = useRef<any | null>(null);
   const handleNextSlide = useCallback(() => {
     if (!swiperRef.current) return;
@@ -173,8 +173,7 @@ const Page = () => {
       </div>
     </main>
   );
-};
+}
 
-export default Page;
 // To reduce LCP, Image must be optimized.
 // This is for beta
